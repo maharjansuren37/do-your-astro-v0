@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+
+/* resets */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/* set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+
+/* general styling */
+body {
+	margin: 0;
+	line-height: 1.5;
+	background-color: #f3f2f1;
+}
+
+body,
+input,
+textarea,
+button {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+}
+
+/* utilities */
+.container {
+	max-width: 1170px;
+	margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* preloader */
+.preloader {
+    position: fixed;
+    inset: 0;
+    background-color: #111;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s ease;
+}
+
+.preloader.loaded {
+    visibility: hidden;
+    opacity: 0;
+    z-index: -99;
+}
+
+.preloader .loader {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-right: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+}
+
+/* animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* section */
+.section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* header */
+.header {
+    outline: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    transition: all 0.5s ease;
+}
+
+.header.fixed {
+    background-color: #000;
+    position: fixed;
+}
+
+.header .brand-name a {
+    text-decoration: none;
+    font-size: 1.875rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+    padding-left: 10px;
+}
+
+.header.fixed .brand-name a {
+    color: #fff;
+}
+
+.header .nav-toggle {
+    width: 40px;
+    height: 34px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    display: none;
+}
+
+.header.fixed .nav-toggle {
+    border-color: #fff;
+}
+
+.header .nav-toggle span {
+    display: block;
+    width: 16px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.header .nav-toggle span,
+.header .nav-toggle span::before,
+.header .nav-toggle span::after {
+    background-color: #fff;
+    height: 2px;
+}
+
+.header .nav-toggle span::before,
+.header .nav-toggle span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.header .nav-toggle span::before {
+    transform: translateY(-6px);
+}
+
+.header .nav-toggle span::after {
+    transform: translateY(6px);
+}
+
+.header .nav {
+    padding-inline: 15px;
+}
+
+.header .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header .nav ul li {
+    display: inline-block;
+    margin-left: 1.875rem;
+}
+
+.header .nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600px;
+    color: #fff;
+    display: block;
+    /* padding-block: 25px; */
+    transition: all 0.5s ease;
+}
+
+.header.fixed .nav ul li a {
+    color: #000;
+}
+
+.header.fixed .nav ul li a:hover,
+.header .nav ul li a:hover {
+    color: #fff;
+    /* border-bottom: 1px solid #fff; */
+}
+
+/* home section */
+
+.home-section {
+    min-height: 100vh;
+
+    background-image: url(assets/bg-hero.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+.home-section .row {
+    min-height: 100vh;
+}
+
+.home-section .home-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.home-section .home-content h4 {
+    font-size: 1.325rem;
+    color: #fff;
+}
+
+.home-section .home-content h1 {
+    font-size: 3.75rem;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.home-section .scroll-down {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    width: 30px;
+    height: 30px;
+    animation: scrollDown 2s ease infinite;
+}
+
+@keyframes scrollDown {
+    0%, 25%, 50%, 75%, 100% {
+        transform: translate(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.home-section .scroll-down img {
+    width: 25px;
+    display: block;
+    margin: 2px auto;
+}
+
+/* Astro */
+.section {
+    padding-block: 80px;
+    background-color: #000;
+    color: #fff;
+}
+
+.section .section-content {
+    flex: 0 0 40%;
+    max-width: 40%;
+    padding-inline: 15px;
+    align-self: center;
+}
+
+.section .section-img {
+    flex: 0 0 60%;
+    max-width: 60%;
+    padding-inline: 15px;
+}
+
+.section .section-img img {
+    display: block;
+    max-width: 100%;
+}
+
+.section .section-title {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section .section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 25%;
+    height: 3px;
+    background-color: #fff;
+}
+
+.section .section-content p {
+    font-size: 1rem;
+    line-height: 26px;
+    margin: 0;
+}
+
+/* contact section */
+
+.contact-section {
+    padding-block: 80px;
+}
+
+.contact-section .contact-title {
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.contact-section .contact-title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 10%;
+    height: 3px;
+    background-color: #000;
+}
+
+.contact-section .contact-form {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-inline: 65px;
+}
+
+.contact-section .contact-form .form {
+    background-color: #f3f2f1;
+    padding: 55px 40px;
+}
+
+.contact-section .contact-form .form label {
+    font-weight: 500;
+    display: block;
+    margin: 0 0 5px;
+}
+
+.contact-section .contact-form .form .input-group {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-inline: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-section .contact-form .form .input-group.left,
+.contact-section .contact-form .form .input-group.right {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.contact-section .contact-form .form .input-control {
+    width: 100%;
+    height: 45px;
+    padding: 6px 12px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+}
+
+.contact-section .contact-form .form .input-control:focus {
+    outline: none;
+}
+
+.contact-section .contact-form .form .form-btn {
+    text-align: center;
+}
+
+.send-btn {
+    background-color: transparent;
+    border: 1px solid #000;
+    padding: .5rem 1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.contact-section .contact-info {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.contact-section .contact-info .info-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    text-align: center;
+    padding-inline: 15px;
+    margin-bottom: 40px;
+}
+
+.contact-section .contact-info .info-item h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.contact-section .contact-info .info-item p {
+    font-size: 1rem;
+    margin: 0;
+    color: #555;
+}
+
+.contact-section .social-links {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-inline: 1rem;
+    text-align: center;
+}
+
+.contact-section .social-links a {
+    text-decoration: none;
+    display: inline-block;
+    margin-inline: 5px;
+}
+
+.contact-section .social-links a img {
+    width: 29px;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.contact-section .social-links a img:hover {
+    opacity: 0.7;
+    transform: translateY(-3px);
+}
+
+.footer {
+    text-align: center;
+    font-size: 16px;
+    padding: 1.4rem 2rem;
+    border-top: 2px solid #c5c5c5;
+}
+
+@media screen and (min-width: 768px) {
+    .header .nav {
+        display: block !important;
+    }
+
+    .header.fixed .nav ul li a,
+    .header .nav ul li a {
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        padding-block: 15px 25px;
+    }
+
+    .header .nav-toggle {
+        display: flex;
+        margin-right: 15px;
+    }
+
+    .header .nav {
+        flex: 0 0 100%;
+        max-width: 100%;
+        background-color: #fff;
+        padding: 0;
+        margin-top: 1rem;
+        display: none;
+    }
+
+    .header.fixed .nav {
+        border-top: 1px solid #cccccc;
+    }
+
+    .header .nav ul li {
+        display: block;
+        margin-right: 25px;
+    }
+
+    .header.fixed .nav ul li a,
+    .header .nav ul li a {
+        color: #000;
+        padding-block: 1rem;
+    }
+
+    .header.fixed .nav ul li a:hover,
+    .header .nav ul li a:hover {
+        color: #000;
+        opacity: 0.8;
+        padding-left: 0.3rem;
+    }
+
+    .home-section .home-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .header {
+        padding-bottom: 0;
+    }
+
+    .home-section .home-content h1 {
+        font-size: 2rem;
+        letter-spacing: 5px;
+    }
+
+    .section:not(.bindery) {
+        padding-bottom: 0;
+    }
+
+    .section .section-content,
+    .section .section-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .section .section-content {
+        padding-bottom: 1.5rem;
+    }
+
+    .bindery .row .section-img {
+        order: 1;
+    }
+
+    .contact-section .contact-form .form .input-group.left,
+    .contact-section .contact-form .form .input-group.right {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-section .contact-form {
+        padding-inline: 20px;
+    }
+
+    .contact-section .contact-form .form {
+        padding-inline: 0; 
+    }
+
+    .contact-section .contact-info .info-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.header .show {
+    display: block;
+}
+
+
