@@ -99,7 +99,7 @@ button {
     width: 100%;
     z-index: 99;
     transition: all 0.5s ease;
-    margin-top: 1rem;
+    padding-block: 1rem;
 }
 
 .header.fixed {
@@ -468,9 +468,9 @@ button {
 }
 
 @media screen and (max-width: 767px) {
-    .header {
+    /* .header {
         padding-block: 15px 25px;
-    }
+    } */
 
     .header .nav-toggle {
         display: flex;
