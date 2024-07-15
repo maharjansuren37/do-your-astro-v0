@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do Your Astro</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="astro.css">
 </head>
 <body>
     <!-- PRELOADER -->
@@ -22,7 +23,7 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./astrophotography.html">Astrophotography</a></li>
                     <li><a href="./bookbindery.html">Bookbindery</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -49,45 +50,29 @@
      </section>
 
      <!-- ASTROPHOTOGRAPHY -->
-      <section class="section">
+      <section class="section astro">
         <div class="container">
             <div class="row">
-                <div class="section-content">
+                <div class="section-content photo-gallery">
                     <div class="row">
                         <div class="section-title">
-                            <h1>Astrophotography</h1>
+                            <h1>Photo Gallery</h1>
                         </div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, velit dolorum? Facere impedit non officia reprehenderit autem fugit distinctio? Architecto eos quas repellendus obcaecati sit saepe in earum neque porro.
                         </p>
-                        <a href="./astrophotography.html" class="more-btn">Learn More</a>
                     </div>
-                </div>
-                <div class="section-img">
-                    <img src="assets/bg-hero.webp" alt="">
                 </div>
             </div>
-        </div>
-      </section>
-
-      <!-- BOOKBINDERY -->
-      <section class="section bindery">
-        <div class="container">
-            <div class="row">
-                <div class="section-img">
-                    <img src="assets/bg-hero.webp" alt="">
-                </div>
-                <div class="section-content">
-                    <div class="row">
-                        <div class="section-title">
-                            <h1>Bookbindery</h1>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, velit dolorum? Facere impedit non officia reprehenderit autem fugit distinctio? Architecto eos quas repellendus obcaecati sit saepe in earum neque porro.
-                        </p>
-                        <a href="./bookbindery.html" class="more-btn">Learn More</a>
-                    </div>
-                </div>
+            <div class="row gallery">
+                <img src="assets/bg-hero.webp" data-large="assets/bg-hero.webp" alt="">
+                <img src="assets/bindery.webp" data-large="assets/bindery.webp" alt="">
+                <img src="assets/bg-hero.webp" data-large="assets/bg-hero.webp" alt="">
+                <img src="assets/bindery.webp" data-large="assets/bindery.webp" alt="">
+                <img src="assets/bg-hero.webp" data-large="assets/bg-hero.webp" alt="">
+                <img src="assets/bindery.webp" data-large="assets/bindery.webp" alt="">
+                <img src="assets/bg-hero.webp" data-large="assets/bg-hero.webp" alt="">
+                <img src="assets/bindery.webp" data-large="assets/bindery.webp" alt="">
             </div>
         </div>
       </section>
@@ -153,6 +138,26 @@
        <footer class="footer">
             <p>&copy; 2022 Do Your Astro</p>
        </footer>
+
+       <!-- lightbox -->
+        <div class="lightbox">
+            <div class="img-box">
+                <div class="lightbox-close">&times;</div>
+                <img src="assets/bg-hero.webp" class="lightbox-img" alt="">
+                <div class="lightbox-caption">
+                    <div class="lightbox-category">test</div>
+                    <div class="lightbox-counter"></div>
+                </div>
+                <div class="lightbox-controls">
+                    <div class="prev">
+                        <img src="assets/icons/prev.svg" alt="">
+                    </div>
+                    <div class="next">
+                        <img src="assets/icons/next.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
 <script src="index.js"></script>
 </body>
 </html>

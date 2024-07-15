@@ -99,11 +99,13 @@ button {
     width: 100%;
     z-index: 99;
     transition: all 0.5s ease;
+    margin-top: 1rem;
 }
 
 .header.fixed {
     background-color: #000;
     position: fixed;
+    padding-bottom: 1rem;
 }
 
 .header .brand-name a {
@@ -200,8 +202,7 @@ button {
 
 .header.fixed .nav ul li a:hover,
 .header .nav ul li a:hover {
-    color: #fff;
-    /* border-bottom: 1px solid #fff; */
+    opacity: 0.8;
 }
 
 /* home section */
@@ -391,6 +392,7 @@ button {
     padding: .5rem 1rem;
     transition: background-color 0.3s ease;
     cursor: pointer;
+    outline: none;
 }
 
 .send-btn:hover {
@@ -563,4 +565,21 @@ button {
     display: block;
 }
 
+
+/* components */
+.more-btn {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: .5rem 1rem;
+    transition: transform 0.3s ease-in-out; 
+    outline: none;
+}
+
+.more-btn:hover,
+.more-btn:focus {
+    opacity: 0.9;
+}
 
