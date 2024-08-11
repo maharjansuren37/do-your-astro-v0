@@ -97,3 +97,43 @@ function lightboxSlideShow() {
     lightboxCounter.innerHTML = (index + 1) + "/" + totalImgLength;
 }
 
+const UIController = (function() {
+    const UIElements = {
+        header: '.header',
+        navToggle: '.nav-toggle',
+        nav: '.header .nav',
+        link: '.nav a',
+        lightbox: '.lightbox',
+        lightboxClose: '.lightbox-close',
+        totalImgs: '.gallery img',
+        lightboxImg: '.lightbox-img',
+        prev: '.prev',
+        next: '.next'
+    }
+
+    const getUIElements = {
+        header: document.querySelector(UIElements.header),
+        navToggle: document.querySelector(UIElements.navToggle),
+        nav: document.querySelector(UIElements.nav),
+        link: document.querySelectorAll(UIElements.link),
+        lightboxClose: document.querySelector(UIElements.lightboxClose),
+        totalImgs: document.querySelectorAll(UIElements.totalImgs),
+        lightboxImg: document.querySelector(UIElements.lightboxImg),
+        prev: document.querySelector(UIElements.prev),
+        next: document.querySelector(UIElements.next)
+    }
+
+    return {
+        UIElements: UIElements,
+        getUIElements: getUIElements
+    }
+})();
+
+const App = (function() {
+
+    return {
+        init: init
+    }
+})();
+
+App.init();
