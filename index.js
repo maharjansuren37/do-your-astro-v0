@@ -12,9 +12,9 @@ const next = document.querySelector('.next');
 let index = 0;
 const totalImgLength = totalImgs.length;
 
-window.addEventListener("load", function() {
-    document.querySelector(".preloader").classList.add("loaded");
-});
+// window.addEventListener("load", function() {
+//     document.querySelector(".preloader").classList.add("loaded");
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -130,6 +130,10 @@ const UIController = (function() {
 })();
 
 const App = (function() {
+
+    window.addEventListener("load", function() {
+         document.querySelector(".preloader").classList.add('loaded');
+    })
 
     return {
         init: init
