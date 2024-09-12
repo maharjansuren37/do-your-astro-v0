@@ -5,7 +5,20 @@
 *::before,
 *::after {
 	box-sizing: border-box;
-	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p, li {
+    text-wrap: pretty;
+    max-width: 65ch;
 }
 
 /* set core root defaults */
@@ -106,6 +119,12 @@ button {
     background-color: #000;
     position: fixed;
     padding-bottom: 1rem;
+}
+
+.header .bar {
+    background-color: white;
+    width: 20px;
+    height: 30px;
 }
 
 .header .brand-name a {

@@ -33,10 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             header.classList.add('fixed');
+            trackScroll();
         } else {
             header.classList.remove('fixed');
         }
-    })
+    });
+
+    function trackScroll() {
+        document.querySelector('.bar').style.width = "40px";
+        console.log(window.scrollY);
+    }
 
     // lightbox.addEventListener('click', () => {
     //     lightbox.classList.add('open');
@@ -133,7 +139,11 @@ const App = (function() {
 
     window.addEventListener("load", function() {
          document.querySelector(".preloader").classList.add('loaded');
-    })
+    });
+
+    const init = () => {
+
+    }
 
     return {
         init: init
